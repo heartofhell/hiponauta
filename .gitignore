@@ -30,9 +30,11 @@ _ReSharper*/
 .vs/
 #Nuget packages folder
 packages/
-cache/
-metadata/
-ShaderCache/
-obj/
-.vs/
-temp/
+cache*/
+metadata*/
+ShaderCache*/
+obj*/
+.vs*/
+temp*/
+/Projeto SpaceShooter/Library/metadata/
+/Projeto SpaceShooter/Library/ShaderCache/
