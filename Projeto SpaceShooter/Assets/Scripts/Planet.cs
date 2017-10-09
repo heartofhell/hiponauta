@@ -23,7 +23,7 @@ public class Planet : MonoBehaviour {
 		max.y = max.y + GetComponent<SpriteRenderer>().sprite.bounds.extents.y;
 
 		//subtrai a sprite do planeta pela metade no min de y
-		max.y = max.y - GetComponent<SpriteRenderer>().sprite.bounds.extents.y;
+		min.y = min.y - GetComponent<SpriteRenderer>().sprite.bounds.extents.y;
 	}
 
 	// Use this for initialization

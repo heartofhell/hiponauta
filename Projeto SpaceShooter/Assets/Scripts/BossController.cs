@@ -1,17 +1,20 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class BossController : MonoBehaviour {
+
+	public GameObject BOSS;
 	GameObject scoreUITextGO; //referencia ao score
 	public GameObject ExplosionGO;// prefab da explosão
-	public int BossHP; //HP do Boss
 	public int BossPoint; //Valor dos pontos do Boss
+	public int BossHP; //HP do Boss
 	public int HPLv2; //HP para entrar no Level 2
 	public int HPLv3; //HP para entrar no Level 3   
-	[HideInInspector]
-	public bool StartLv2 = false;
+	[HideInInspector]public bool StartLv1;
+	[HideInInspector] public bool StartLv2;
+	[HideInInspector] public bool StartLv3;
 	bool block = false; //Var para parar a descida do Boss
-
 
 	float speed; //velocidade do inimigo
 
@@ -30,6 +33,7 @@ public class BossController : MonoBehaviour {
 		//define o texto do score
 		scoreUITextGO = GameObject.FindGameObjectWithTag("ScoreTextTag");
 
+		BState = BossState.Lv1;
 	}
 
 	// Update is called once per frame
@@ -45,10 +49,13 @@ public class BossController : MonoBehaviour {
 			transform.position = position;
 
 			//Boss para na posição Y 2.5
-			if (position.y <= 2.5F) {
+			if (position.y <= 2f) {
 				block = true;
 			}
 		}
+
+		//função para trocar o level do boss segundo sua vida
+		BossLevelPerLife(BossHP);
 
 		//Se o jogador morrer o boss some
 		GameObject playerShip = GameObject.Find("PlayerGO");
@@ -58,11 +65,36 @@ public class BossController : MonoBehaviour {
 		}
 	}
 
+	void BossLevelPerLife (int BossHP) {
+
+		UpdateBossState();
+
+		if (BossHP < HPLv2) {
+			BState = BossState.Lv2;
+		}
+
+		if (BossHP < HPLv3) {
+			BState = BossState.Lv3;
+		}
+	}
+
 	//função para alterar a dificuldade do boss
 	void UpdateBossState () {
 		switch (BState) {
-			case BossState.Lv2:
+			case (BossState.Lv1):
+				StartLv1 = true;
+				StartLv2 = false;
+				StartLv3 = false;
+				break;
+			case (BossState.Lv2):
+				StartLv1 = false;
 				StartLv2 = true;
+				StartLv3 = false;
+				break;
+			case (BossState.Lv3):
+				StartLv1 = false;
+				StartLv2 = false;
+				StartLv3 = true;
 				break;
 		}
 	}

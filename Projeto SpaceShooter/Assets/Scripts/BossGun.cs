@@ -4,7 +4,7 @@ using System.Collections;
 public class BossGun : MonoBehaviour {
 	public GameObject EnemyBulletGO; //este é o prefab do tiro inimigo
 	public GameObject BossObj;
-	public float fireRate; //Taxa de tiros
+	//public float fireRate; //Taxa de tiros
 	private float nextFire; //intervalo entre os tiros
 	BossController _Boss;
 
@@ -16,18 +16,32 @@ public class BossGun : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		//if (_Boss.StartLv2== true)
-		//{
 		if (Time.time > nextFire) {
-			//proximo time será feito no tempo atual+taxa de tiro, ou seja, daqui a "Taxa de tiro" segundos depois
-			nextFire = Time.time + fireRate;
 
-			//disparar tiro inimigo a cada 1s
-			FireEnemyBullet();
+			if (_Boss.StartLv1) {
+				//proximo time será feito no tempo atual+taxa de tiro, ou seja, daqui a "Taxa de tiro" segundos depois
+				nextFire = Time.time + 1f;
+
+				//disparar tiro inimigo a cada 1s
+				FireEnemyBullet();
+			}
+
+			if (_Boss.StartLv2) {
+				//proximo time será feito no tempo atual+taxa de tiro, ou seja, daqui a "Taxa de tiro" segundos depois
+				nextFire = Time.time + .5f;
+
+				//disparar tiro inimigo a cada 1s
+				FireEnemyBullet();
+			}
+
+			if (_Boss.StartLv3) {
+				//proximo time será feito no tempo atual+taxa de tiro, ou seja, daqui a "Taxa de tiro" segundos depois
+				nextFire = Time.time + .2f;
+
+				//disparar tiro inimigo a cada 1s
+				FireEnemyBullet();
+			}
 		}
-		//}
-
-
 	}
 
 	//função para o inimigo atirar

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject playerShip;
 	public GameObject enemySpawner;//referencia p/ o spawn de inimigos 
 	public GameObject GameOverGO;//referencia para o game over
+	public GameObject GameTitleGO;
 	public GameObject scoreUITextGO; //referencia para o score
 	public GameObject scoreUI; //referencia para a UI do score
 	public GameObject livesUITextGO; //referencia para o score
@@ -57,6 +58,9 @@ public class GameManager : MonoBehaviour {
 				//deixar o botão play ativo
 				playButton.SetActive(true);
 
+				//ativa o titulo do game
+				GameTitleGO.SetActive(true);
+
 				break;
 
 			case GameManagerState.Gameplay:
@@ -66,6 +70,9 @@ public class GameManager : MonoBehaviour {
 				scoreUI.SetActive(true);
 				livesUITextGO.SetActive(true);
 				livesUI.SetActive(true);
+
+				//esconde o titulo
+				GameTitleGO.SetActive(false);
 
 				//resetar o score
 				scoreUITextGO.GetComponent<GameScore>().Score = 0;
@@ -100,8 +107,8 @@ public class GameManager : MonoBehaviour {
 				//parar o spaw de inimigos
 				enemySpawner.GetComponent<EnemySpawner>().UnscheduleEnemySpawner();
 				if (block == false) {
-					GameObject anBoss = (GameObject)Instantiate(Boss);
-					anBoss.transform.position = new Vector2(0, 5);
+					GameObject aBoss = (GameObject)Instantiate(Boss);
+					aBoss.transform.position = new Vector2(0, 5);
 					block = true;
 				}
 
