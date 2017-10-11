@@ -4,6 +4,7 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 	//referencias para os game objects
 	public GameObject Boss;
+	public GameObject capa;
 	public GameObject playButton;
 	public GameObject playerShip;
 	public GameObject enemySpawner;//referencia p/ o spawn de inimigos 
@@ -56,7 +57,9 @@ public class GameManager : MonoBehaviour {
 
 				//deixar o botão play ativo
 				playButton.SetActive(true);
-
+				
+				//ativa a capa do jogo
+				capa.SetActive(true);
 				break;
 
 			case GameManagerState.Gameplay:
@@ -72,6 +75,9 @@ public class GameManager : MonoBehaviour {
 
 				//esconde o botão play
 				playButton.SetActive(false);
+				
+				//desativa a capa do jogo
+				capa.SetActive(false);
 
 				//habilita a nave do player
 				playerShip.GetComponent<PlayerControl>().Init();
