@@ -60,8 +60,10 @@
      <Compile Include="Assets\Scripts\PlanetController.cs" />
      <Compile Include="Assets\Scripts\PlayerBullet.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
+     <Compile Include="Assets\Scripts\SpawnIlha.cs" />
      <Compile Include="Assets\Scripts\Star.cs" />
      <Compile Include="Assets\Scripts\StarGenerator.cs" />
+     <Compile Include="Assets\Scripts\actionIlha.cs" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>C:/Users/Santos computer's/Desktop/Hiponauta_sprites/hiponauta_jogo/hiponauta/Projeto SpaceShooter/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>

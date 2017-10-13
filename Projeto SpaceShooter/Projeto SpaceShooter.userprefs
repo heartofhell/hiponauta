@@ -1,13 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\actionIlha.cs">
     <Files>
-      <File FileName="Assets\Scripts\BossController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameScore.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="79" Column="15" />
-      <File FileName="Assets\Scripts\PlayerControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BossGun.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SpawnIlha.cs" Line="8" Column="28" />
+      <File FileName="Assets\Scripts\actionIlha.cs" Line="7" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
