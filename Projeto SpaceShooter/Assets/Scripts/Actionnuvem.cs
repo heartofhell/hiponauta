@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class actionIlha : MonoBehaviour {
+public class Actionnuvem : MonoBehaviour {
 
 	public Rigidbody2D corpo;
-	public GameObject ilha;
+	public GameObject nuvem;
 	public float velocidade;
 	public float halfSpawnerWidth;
 	public Vector2 screenSize;
@@ -14,7 +14,7 @@ public class actionIlha : MonoBehaviour {
 		halfSpawnerWidth = transform.localScale.x / 2;
 		screenSize = new Vector2 (Camera.main.aspect * Camera.main.orthographicSize + halfSpawnerWidth, Camera.main.orthographicSize);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -41,9 +41,7 @@ public class actionIlha : MonoBehaviour {
 	void destroyObject(){
 
 		if(transform.position.y+2 < -screenSize.y){
-			Destroy(ilha);	
+			Destroy(nuvem);	
 		}
 	}
-
-
 }

@@ -1,9 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\actionIlha.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Actionnuvem.cs">
     <Files>
-      <File FileName="Assets\Scripts\SpawnIlha.cs" Line="8" Column="28" />
-      <File FileName="Assets\Scripts\actionIlha.cs" Line="7" Column="27" />
+      <File FileName="Assets\Scripts\SpawnIlha.cs" Line="46" Column="34" />
+      <File FileName="Assets\Scripts\actionIlha.cs" Line="46" Column="3" />
+      <File FileName="Assets\Scripts\PlanetController.cs" Line="34" Column="11" />
+      <File FileName="Assets\Scripts\Actionnuvem.cs" Line="42" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
