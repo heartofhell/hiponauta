@@ -41,7 +41,7 @@ public class EnemyControl : MonoBehaviour {
 			PlayExplosion();
 
 			//add X pontos para o score
-			scoreUITextGO.GetComponent<GameScore>().Score += 100;
+			scoreUITextGO.GetComponent<GameScore>().Score += 50;
 
 			//destrói a nave inimiga
 			Destroy(gameObject);

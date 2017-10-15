@@ -7,6 +7,7 @@ public class SpawnIlha : MonoBehaviour {
 	public GameObject ilha;
 	public GameObject nuvem;
 	public GameObject posicao;
+	public GameObject passarinho;
 	//tutorial
 	public float halfSpawnerWidth;
 	public Vector2 screenSize;
@@ -21,7 +22,6 @@ public class SpawnIlha : MonoBehaviour {
 	void Start () {
 		halfSpawnerWidth = transform.localScale.x / 2;
 		screenSize = new Vector2 (Camera.main.aspect * Camera.main.orthographicSize + halfSpawnerWidth, Camera.main.orthographicSize);
-		InvokeRepeating ("spawnObject", 2f, 7f);
 
 	}
 	
@@ -30,21 +30,37 @@ public class SpawnIlha : MonoBehaviour {
 		variacaoPosicao = new Vector2 (Random.Range (posicao.transform.position.x ,Camera.main.aspect * Camera.main.orthographicSize + halfSpawnerWidth), posicao.transform.position.y);
 	}
 		
+	public void chamaSpawn(){
+		InvokeRepeating ("spawnObject", 2f, 7f);
+		InvokeRepeating ("spawnPassarinhos", 2f, 5f);
+	}
 
-	void spawnObject(){
+	public void spawnObject(){
 
 		spawnRange = Random.Range (0, 10);
 
-		if(spawnRange >= 4){
+		if(spawnRange >= 5){
 
-			GameObject tempIlha;
-			tempIlha = Instantiate (ilha, variacaoPosicao, Quaternion.identity);
+			Instantiate (ilha, variacaoPosicao, Quaternion.identity);
 			//spanwTime = Random.Range (2f, 7f);	
 		}else{
 
-			GameObject tempNuvem;
-			tempNuvem = Instantiate (nuvem, variacaoPosicao, Quaternion.identity);
+			Instantiate (nuvem, variacaoPosicao, Quaternion.identity);
 		}
+	}
+
+	public void spawnPassarinhos(){
+
+		spawnRange = Random.Range (0, 10);
+
+		if(spawnRange >= 5){
+			Instantiate (passarinho, variacaoPosicao, Quaternion.identity);
+		}
+	}
+
+	public void ParaSpawn(){
+		CancelInvoke ("spawnPassarinhos");
+		CancelInvoke ("spawnObject");
 	}
 }
 

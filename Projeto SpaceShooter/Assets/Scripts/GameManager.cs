@@ -1,13 +1,16 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 	//referencias para os game objects
 	public GameObject Boss;
 	public GameObject capa;
 	public GameObject playButton;
+	public GameObject interfaceJogo;
 	public GameObject playerShip;
 	public GameObject enemySpawner;//referencia p/ o spawn de inimigos 
+	public GameObject spawnElementos;
 	public GameObject GameOverGO;//referencia para o game over
 	public GameObject scoreUITextGO; //referencia para o score
 	public GameObject scoreUI; //referencia para a UI do score
@@ -34,6 +37,7 @@ public class GameManager : MonoBehaviour {
 		scoreUI.SetActive(false);
 		livesUITextGO.SetActive(false);
 		livesUI.SetActive(false);
+		interfaceJogo.SetActive (false);
 
 	}
 
@@ -50,40 +54,44 @@ public class GameManager : MonoBehaviour {
 	// função para atualizar o GMState
 	void UpdateGameManagerState () {
 		switch (GMState) {
-			case GameManagerState.Opening:
+		case GameManagerState.Opening:
 
 				//esconder Game Over
-				GameOverGO.SetActive(false);
+			GameOverGO.SetActive (false);
 
 				//deixar o botão play ativo
-				playButton.SetActive(true);
+			playButton.SetActive (true);
 				
 				//ativa a capa do jogo
-				capa.SetActive(true);
+			capa.SetActive (true);
+
 				break;
 
-			case GameManagerState.Gameplay:
+		case GameManagerState.Gameplay:
 
 				//mostra botão Score
-				scoreUITextGO.SetActive(true);
-				scoreUI.SetActive(true);
-				livesUITextGO.SetActive(true);
-				livesUI.SetActive(true);
+			scoreUITextGO.SetActive (true);
+			scoreUI.SetActive (true);
+			livesUITextGO.SetActive (true);
+			livesUI.SetActive (true);
+			interfaceJogo.SetActive (true);
 
 				//resetar o score
-				scoreUITextGO.GetComponent<GameScore>().Score = 0;
+			scoreUITextGO.GetComponent<GameScore> ().Score = 0;
 
 				//esconde o botão play
-				playButton.SetActive(false);
+			playButton.SetActive (false);
 				
 				//desativa a capa do jogo
-				capa.SetActive(false);
+			capa.SetActive (false);
 
 				//habilita a nave do player
-				playerShip.GetComponent<PlayerControl>().Init();
+			playerShip.GetComponent<PlayerControl> ().Init ();
 
 				//começar o spawn de inimigos
-				enemySpawner.GetComponent<EnemySpawner>().ScheduleEnemySpawner();
+			enemySpawner.GetComponent<EnemySpawner> ().ScheduleEnemySpawner ();
+				
+			spawnElementos.GetComponent<SpawnIlha> ().chamaSpawn();
 
 				break;
 
@@ -99,6 +107,8 @@ public class GameManager : MonoBehaviour {
 
 				//mudar o GMState para Opening depois de 8 segundos
 				Invoke("ChangeToOpeningState", 5f);
+
+				spawnElementos.GetComponent<SpawnIlha> ().CancelInvoke();
 
 				break;
 			case GameManagerState.Boss:

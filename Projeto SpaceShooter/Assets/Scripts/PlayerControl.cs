@@ -94,7 +94,7 @@ public class PlayerControl : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col) {
 		//detecta colisão da nave do player com a nave inimiga ou seus tiros
-		if ((col.tag == "EnemyShipTag") || (col.tag == "EnemyBulletTag")) {
+		if ((col.tag == "EnemyShipTag") || (col.tag == "EnemyBulletTag") || (col.tag == "elementosComplementar")) {
 			PlayExplosion();
 
 			//subtrai um da vida

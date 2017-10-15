@@ -8,16 +8,16 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		
 	}
 
 	// Update is called once per frame
 	void Update () {
-
+		
 	}
 
 	//função para spawnar inimigos
-	void SpawnEnemy () {
+	void SpawnEnemy () { 
 		//este é o canto inferior esquerdo da tela
 		Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
 
@@ -47,7 +47,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	//função para almentar a dificuldade do jogo
 	void IncreaseSpawnRate () {
-		if (maxSpawnRateInSeconds > 1f)
+		if (maxSpawnRateInSeconds > 0.5f)
 			maxSpawnRateInSeconds--;
 
 		if (maxSpawnRateInSeconds == 1f)

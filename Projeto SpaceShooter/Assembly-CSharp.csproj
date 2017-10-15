@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\Star.cs" />
      <Compile Include="Assets\Scripts\StarGenerator.cs" />
      <Compile Include="Assets\Scripts\actionIlha.cs" />
+     <Compile Include="Assets\Scripts\actionPassarionho.cs" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>C:/Users/Santos computer's/Desktop/Hiponauta_sprites/hiponauta_jogo/hiponauta/Projeto SpaceShooter/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
