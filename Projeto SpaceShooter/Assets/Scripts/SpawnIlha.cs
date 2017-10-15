@@ -8,6 +8,7 @@ public class SpawnIlha : MonoBehaviour {
 	public GameObject nuvem;
 	public GameObject posicao;
 	public GameObject passarinho;
+	public GameObject pedra;
 	//tutorial
 	public float halfSpawnerWidth;
 	public Vector2 screenSize;
@@ -33,20 +34,21 @@ public class SpawnIlha : MonoBehaviour {
 	public void chamaSpawn(){
 		InvokeRepeating ("spawnObject", 2f, 7f);
 		InvokeRepeating ("spawnPassarinhos", 2f, 5f);
+		InvokeRepeating ("spawnNuvem", 3f, 5f);
 	}
 
 	public void spawnObject(){
 
-		spawnRange = Random.Range (0, 10);
+		spawnRange = Random.Range (0, 20);
 
-		if(spawnRange >= 5){
+		if (spawnRange >= 10) {
 
 			Instantiate (ilha, variacaoPosicao, Quaternion.identity);
 			//spanwTime = Random.Range (2f, 7f);	
-		}else{
-
-			Instantiate (nuvem, variacaoPosicao, Quaternion.identity);
+		} else{
+			Instantiate (pedra, variacaoPosicao, Quaternion.identity);
 		}
+			
 	}
 
 	public void spawnPassarinhos(){
@@ -58,9 +60,21 @@ public class SpawnIlha : MonoBehaviour {
 		}
 	}
 
+	public void spawnNuvem(){
+
+
+
+		spawnRange = Random.Range (0, 10);
+
+		if(spawnRange >= 5){
+			Instantiate (nuvem, variacaoPosicao, Quaternion.identity);
+		}
+	}
+
 	public void ParaSpawn(){
 		CancelInvoke ("spawnPassarinhos");
 		CancelInvoke ("spawnObject");
+		CancelInvoke ("spawnNuvem");
 	}
 }
 
