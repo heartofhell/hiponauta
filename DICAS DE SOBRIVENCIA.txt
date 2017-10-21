@@ -1,4 +1,4 @@
-﻿Não commitar os arquivos das seguintes pastas, pois não são necessários:
+Não commitar os arquivos das seguintes pastas, pois não são necessários:
 	Projeto SpaceShooter\Library\cache
 	Projeto SpaceShooter\Library\metadata
 	Projeto SpaceShooter\Library\ShaderCache
@@ -8,4 +8,7 @@
 Usem o git extensions para visualizar as alterações e commitar é muito mais visual.
 https://sourceforge.net/projects/gitextensions/
 	
-e é nos!!
+e é nos
+
+
+bom projeto!!

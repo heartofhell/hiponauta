@@ -76,24 +76,37 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Facebook.Unity.Settings">
+      <HintPath>Library\FacebookSDK\Facebook.Unity.Settings.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\BossBullet.cs" />
-    <Compile Include="Assets\Scripts\BossController.cs" />
-    <Compile Include="Assets\Scripts\BossGun.cs" />
-    <Compile Include="Assets\Scripts\Destroyer.cs" />
-    <Compile Include="Assets\Scripts\EnemyBullet.cs" />
-    <Compile Include="Assets\Scripts\EnemyControl.cs" />
-    <Compile Include="Assets\Scripts\EnemyGun.cs" />
-    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\GameScore.cs" />
-    <Compile Include="Assets\Scripts\Planet.cs" />
-    <Compile Include="Assets\Scripts\PlanetController.cs" />
-    <Compile Include="Assets\Scripts\PlayerBullet.cs" />
-    <Compile Include="Assets\Scripts\PlayerControl.cs" />
-    <Compile Include="Assets\Scripts\Star.cs" />
-    <Compile Include="Assets\Scripts\StarGenerator.cs" />
+    <Compile Include="Assets\Level 1 - Assets\Scripts\Actionnuvem.cs" />
+    <Compile Include="Assets\Level 1 - Assets\Scripts\Destroyer.cs" />
+    <Compile Include="Assets\Level 1 - Assets\Scripts\EnemyBullet.cs" />
+    <Compile Include="Assets\Level 1 - Assets\Scripts\EnemyControl.cs" />
+    <Compile Include="Assets\Level 1 - Assets\Scripts\EnemyGun.cs" />
+    <Compile Include="Assets\Level 1 - Assets\Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\Level 1 - Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Level 1 - Assets\Scripts\GameScore.cs" />
+    <Compile Include="Assets\Level 1 - Assets\Scripts\PlayerBullet.cs" />
+    <Compile Include="Assets\Level 1 - Assets\Scripts\PlayerControl.cs" />
+    <Compile Include="Assets\Level 1 - Assets\Scripts\SpawnIlha.cs" />
+    <Compile Include="Assets\Level 1 - Assets\Scripts\actionIlha.cs" />
+    <Compile Include="Assets\Level 1 - Assets\Scripts\actionPassarionho.cs" />
+    <Compile Include="Assets\Level 2 - Assets\Scripts\L2Destroyer.cs" />
+    <Compile Include="Assets\Level 2 - Assets\Scripts\L2EnemyBullet.cs" />
+    <Compile Include="Assets\Level 2 - Assets\Scripts\L2EnemyControl.cs" />
+    <Compile Include="Assets\Level 2 - Assets\Scripts\L2EnemyGun.cs" />
+    <Compile Include="Assets\Level 2 - Assets\Scripts\L2EnemySpawner.cs" />
+    <Compile Include="Assets\Level 2 - Assets\Scripts\L2GameManager.cs" />
+    <Compile Include="Assets\Level 2 - Assets\Scripts\L2GameScore.cs" />
+    <Compile Include="Assets\Level 2 - Assets\Scripts\L2Planet.cs" />
+    <Compile Include="Assets\Level 2 - Assets\Scripts\L2PlanetController.cs" />
+    <Compile Include="Assets\Level 2 - Assets\Scripts\L2PlayerBullet.cs" />
+    <Compile Include="Assets\Level 2 - Assets\Scripts\L2PlayerControl.cs" />
+    <Compile Include="Assets\Level 2 - Assets\Scripts\L2Star.cs" />
+    <Compile Include="Assets\Level 2 - Assets\Scripts\L2StarGenerator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
